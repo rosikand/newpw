@@ -1,0 +1,16 @@
+title: Your Name
+description: Personal website
+url: ""
+baseurl: ""
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+
+# Build settings
+permalink: /posts/:title/
+exclude:
+  - charlieoneill11.github.io-main
+  - vendor
+  - README.md
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+    {% if page.math %}
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    {% endif %}
+
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <a href="{{ '/' | relative_url }}" class="nav-name">{{ site.title }}</a>
+                <span class="nav-sep">|</span>
+                <a href="{{ '/research/' | relative_url }}" {% if page.url contains '/research' %}class="active"{% endif %}>Research</a>
+                <span class="nav-sep">|</span>
+                <a href="{{ '/posts/' | relative_url }}" {% if page.url contains '/posts' %}class="active"{% endif %}>Posts</a>
+            </nav>
+        </header>
+
+        <main>
+            {{ content }}
+        </main>
+
+        <footer>
+            <p>© {{ site.time | date: '%Y' }} {{ site.title }}</p>
+        </footer>
+    </div>
+</body>
+</html>
