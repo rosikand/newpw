@@ -115,8 +115,11 @@ _data/research.yml
 name: Your Name
 email: you@example.com
 photo: /images/profile-placeholder.svg
-bio: >
-  Short homepage bio goes here.
+bio: |
+  Short homepage bio goes here. Markdown works, so **bold text** and
+  [links](https://example.com) are supported.
+
+  Add a blank line to create another paragraph.
 ```
 
 `_data/research.yml` holds research/project entries:
@@ -143,6 +146,8 @@ The point is to separate personal facts from template structure. It helps becaus
 - you expect research entries to grow into a longer structured list.
 
 For normal content edits, start in `_data/profile.yml` and `_data/research.yml`. Edit `index.html` or `research.html` only when changing page structure.
+
+For multi-paragraph bios, use `bio: |` and separate paragraphs with blank lines. Use normal Markdown inside the bio. Do not prefix normal paragraphs with `>` unless you intentionally want a blockquote.
 
 ## Edit Cycle
 

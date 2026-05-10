@@ -1,9 +1,14 @@
-name: Your Name
-email: you@example.com
-photo: /images/profile-placeholder.svg
-bio: >
-  I work on the things I care about most. This is the short version of my bio:
-  what I am building, where I have worked or studied, and what I like outside of
-  work. Replace this paragraph with your real introduction, keeping the same
-  single-paragraph rhythm if you want the page to stay close to the original
-  design.
+name: Rohan Sikand
+email: rsikand@stanford.edu
+photo: /images/linkedin-profile-pic.jpeg
+bio: |
+  Hey! I'm Rohan. I am a BS/MS student at Stanford University studying Computer Science. I am interested in **AI research, ML engineering, startups, and venture capital**. 
+  
+   <br>
+  
+  In the past, I’ve conducted research in **self-supervised learning** at SAIL, engineered vision models at **insitro**, and built many ML projects. I am currently interested in **RL and reasoning for post-training foundation models**. See my (informal) [research notebook](https://rosikand.github.io/rl/) for more on this. 
+
+  <br>
+
+  I also infrequently write about startups and venture capital on **Substack** at [**Rohan’s Random Walks**](https://rosikand.substack.com/). In my free time, I play golf and tennis. Feel free to reach out!
+
