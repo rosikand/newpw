@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+{% assign site_name = site.data.profile.name | default: site.title %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>{% if page.title %}{{ page.title }} - {{ site_name }}{% else %}{{ site_name }}{% endif %}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +34,7 @@
     <div class="container">
         <header>
             <nav>
-                <a href="{{ '/' | relative_url }}" class="nav-name">{{ site.title }}</a>
+                <a href="{{ '/' | relative_url }}" class="nav-name">{{ site_name }}</a>
                 <span class="nav-sep">|</span>
                 <a href="{{ '/research/' | relative_url }}" {% if page.url contains '/research' %}class="active"{% endif %}>Research</a>
                 <span class="nav-sep">|</span>
@@ -46,7 +47,7 @@
         </main>
 
         <footer>
-            <p>© {{ site.time | date: '%Y' }} {{ site.title }}</p>
+            <p>© {{ site.time | date: '%Y' }} {{ site_name }}</p>
         </footer>
     </div>
 </body>

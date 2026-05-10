@@ -13,10 +13,9 @@ GEM_HOME=vendor/ruby GEM_PATH=vendor/ruby JEKYLL_NO_BUNDLER_REQUIRE=true /usr/bi
 
 Review placeholder content before publishing:
 
-- `_config.yml` still uses `Your Name`
-- `index.html` still has placeholder bio and email text
+- `_data/profile.yml` still has placeholder name, bio, email, and profile image
+- `_data/research.yml` still has a placeholder research entry
 - `images/profile-placeholder.svg` is still the profile image
-- `research.html` still has a placeholder research entry
 
 Do not commit `.codex-session/`; it is intentionally ignored because raw Codex logs can contain sensitive context.
 
@@ -106,6 +105,30 @@ To deploy:
    ```
 
 GitHub's docs state that project sites publish under `https://<owner>.github.io/<repositoryname>` and that Pages publishing can take several minutes.
+
+### If The Workflow Fails At `Setup Pages`
+
+If the GitHub Actions log shows:
+
+```text
+Error: Get Pages site failed. Please verify that the repository has Pages enabled and configured to build using GitHub Actions
+Error: HttpError: Not Found
+```
+
+the repository has not been enabled for GitHub Pages with the Actions source yet.
+
+Fix it in GitHub:
+
+1. Open `https://github.com/rosikand/newpw`.
+2. Go to **Settings** -> **Pages**.
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+4. Save if GitHub shows a save button.
+5. Go back to the failed Actions run.
+6. Click **Re-run jobs**.
+
+Do not switch the source to `Deploy from a branch` for this workflow. This repo uses `.github/workflows/pages.yml`, so the Pages source should be **GitHub Actions**.
+
+The `actions/configure-pages` action has an `enablement` option, but GitHub documents that this requires a token other than the default `GITHUB_TOKEN` with extra Pages/admin permissions. Manual setup in **Settings** -> **Pages** is simpler for this test deploy.
 
 ### Decide the URL Shape
 

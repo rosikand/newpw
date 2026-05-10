@@ -55,7 +55,6 @@ The original site README recommends Homebrew Ruby on macOS because system Ruby c
 
 The site builds and serves locally, but the top-level content still has placeholders:
 
-- `_config.yml` uses `Your Name`
-- `index.html` has placeholder bio and email text
+- `_data/profile.yml` has placeholder name, bio, email, and profile image
+- `_data/research.yml` has a placeholder research entry
 - `images/profile-placeholder.svg` is still the profile image
-- `research.html` has a placeholder research entry

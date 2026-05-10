@@ -3,13 +3,17 @@ layout: default
 title: Home
 ---
 
+{% assign profile = site.data.profile %}
+
 <section class="about-section">
-    <img src="{{ '/images/profile-placeholder.svg' | relative_url }}" alt="Your Name" class="profile-photo">
+    <img src="{{ profile.photo | relative_url }}" alt="{{ profile.name }}" class="profile-photo">
     <div class="bio-content">
-        <p>I work on the things I care about most. This is the short version of my bio: what I am building, where I have worked or studied, and what I like outside of work. Replace this paragraph with your real introduction, keeping the same single-paragraph rhythm if you want the page to stay close to the original design.</p>
+        <p>{{ profile.bio }}</p>
     </div>
 </section>
 
+{% if profile.email %}
 <section class="contact-info">
-    <p><a href="mailto:you@example.com">you@example.com</a></p>
+    <p><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
 </section>
+{% endif %}

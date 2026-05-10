@@ -6,12 +6,22 @@ title: Research
 <h1>Research</h1>
 
 <div class="papers-section">
+    {% for item in site.data.research %}
     <div class="paper">
-        <p><strong>Your Name</strong></p>
-        <em>Project, paper, or research direction</em>
-        <div class="paper-meta">Add venue, status, collaborators, or a one-line note</div>
+        {% if item.authors %}
+        <p><strong>{{ item.authors }}</strong></p>
+        {% endif %}
+        <em>{{ item.title }}</em>
+        {% if item.meta %}
+        <div class="paper-meta">{{ item.meta }}</div>
+        {% endif %}
+        {% if item.links %}
         <div class="paper-links">
-            <a href="#">Link</a>
+            {% for link in item.links %}
+            <a href="{{ link.url }}">{{ link.label }}</a>
+            {% endfor %}
         </div>
+        {% endif %}
     </div>
+    {% endfor %}
 </div>
