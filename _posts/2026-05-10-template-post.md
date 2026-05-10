@@ -3,7 +3,7 @@ layout: post
 title: Template Post
 description: A dummy post showing the front matter and Markdown patterns this site supports.
 date: 2026-05-10
-tag: other
+tag: ai
 math: true
 hidden: true
 ---
@@ -62,4 +62,5 @@ hidden: false
 The posts page currently recognizes:
 
 - `tag: ai`
+- `tag: technical`
 - `tag: other`

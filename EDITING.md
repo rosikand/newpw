@@ -56,6 +56,14 @@ Typical edits:
 - `_posts/`: blog posts as Markdown files.
 - `images/`: profile photo and post images.
 
+Supported post categories:
+
+```yaml
+tag: ai
+tag: technical
+tag: other
+```
+
 For the current GitHub Pages test deploy at `https://rosikand.github.io/newpw/`, `_config.yml` should keep:
 
 ```yml

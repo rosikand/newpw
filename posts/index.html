@@ -8,6 +8,7 @@ title: Posts
 <div class="filter-buttons">
     <button class="active" data-filter="all">All</button>
     <button data-filter="ai">AI</button>
+    <button data-filter="technical">Technical</button>
     <button data-filter="other">Everything else</button>
 </div>
 
@@ -21,7 +22,7 @@ title: Posts
     <div class="post-preview" data-tag="{{ post_tag }}">
       <h2>
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        <span class="tag-badge tag-{{ post_tag }}">{% if post_tag == "ai" %}AI{% else %}Everything else{% endif %}</span>
+        <span class="tag-badge tag-{{ post_tag }}">{% if post_tag == "ai" %}AI{% elsif post_tag == "technical" %}Technical{% else %}Everything else{% endif %}</span>
       </h2>
       {% if post.description %}
         <div class="post-description">{{ post.description }}</div>
